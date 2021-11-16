@@ -1373,29 +1373,28 @@ $$
     \Pi_{A_{1}, \cdots, A_{n}}\left(E_{1} \times E_{2}\right) \equiv \Pi_{B_{1}, \cdots, B_{m}}\left(E_{1}\right) \times \Pi_{C_{1}, \cdots, C_{k}}\left(E_{2}\right)
     $$
     
-
   + $L_8$，**选择和并**的**交换**律：
-
+  
     ​	设关系代数表达式 $E=E_{1} \cup E_{2}, F$ 是条件，则有:
     $$
     \sigma_{F}\left(E_{1} \cup E_{2}\right) \equiv \sigma_{F}\left(E_{1}\right) \cup \sigma_{F}\left(E_{2}\right)
     $$
     > 此定理要求 ${E}_{1}, {E}_{2}$ 是**并相容**的。
-
+  
   + $L_9$，**选择和差**的**交换**律：
-
+  
     ​	设关系代数表达式 $E=E_{1}-E_{2}, F$ 是条件，则有:
     $$
     \sigma_{F}\left(E_{1}-E_{2}\right) \equiv \sigma_{F}\left(E_{1}\right)-\sigma_{F}\left(E_{2}\right)
     $$
     
   + $L_{10}$，**投影和并**的**交换**律：
-
+  
     ​	设关系代数表达式 $E=E_{1} \cup E_{2}, A_{1}, \cdots, A_{n}$ 是 $E$ 中的一些属性，则有:
     $$
     \Pi_{A_{1}, \cdots, A_{n}}\left(E_{1} \cup E_{2}\right) \equiv \Pi_{A_{1}, \cdots, A_{n}}\left(E_{1}\right) \cup \pi_{A_{1}, \cdots, A_{n}}\left(E_{2}\right)
     $$
-
+  
     > 因为投影会去重，**投影和差**的**交换**律是不成立的，即：
     > $$
     > \Pi_{A_{1}, \cdots, A_{n}}\left(E_{1} - E_{2}\right) \not\equiv \Pi_{A_{1}, \cdots, A_{n}}\left(E_{1}\right) - \pi_{A_{1}, \cdots, A_{n}}\left(E_{2}\right)
@@ -1404,7 +1403,7 @@ $$
     >
     > + 先差后投影：$E_1-E_2$ 有两个元组，去重后有 $1$ 个元组。
     > + 先投影后差：投影后 $E_1,E_2$ 都只有一个元组，差运算后结果为空，与前者不等价。
-
+  
 + 优化算法执行流程：
 
   + 依据选择串接律 $\sigma_{F_{1}}\left(\sigma_{F_{2}}(E)\right) \equiv \sigma_{F_{1} \wedge F_{2}}(E)$，对于右边形式的关系表达式，转为左边串接形式。
@@ -1485,9 +1484,56 @@ $$
   >
   > + $R$ 有 $n$ 个元组，其中有 $m_{1}$ 个满足 $C_1$，有 $m_{2}$ 个满足 $C_2$。
   > + $\begin{aligned}(1-\frac{\mathrm{m}_{1}}{\mathrm{n}})\end{aligned}$ 是不满足 $C_1$ 的那些元组，$\begin{aligned}(1-\frac{\mathrm{m}_{2}}{\mathrm{n}})\end{aligned}$ 是不满足 $C_2$ 的那些元组。
-  > + 两数之积是不在 $S$ 中的那部分 $R$ 的元组， $1$ 减去这个积就是满足条件元组出现的概率。
+  > + 两数之积是不满足条件的元组概率（这里并不严谨）， $1$ 减去这个积就是满足条件元组出现的概率。
 
-+ 
++ 前一种类型的举例：估计选择运算 $S=\sigma_{A=10~OR~ B<20} (R)$ 的大小：
+
+  > 估计：
+  > $$
+  > \begin{gathered}
+  > n=T(R)=10000\\ V(R, A)=50 \\
+  > m_{1}=T(R) / V(R, A)=10000 / 50=200 ;
+  > \\m_{2}=T(R) / 3=10000 / 3 \approx 3333
+  > \end{gathered}
+  > $$
+  > 有 $m_{1}$ 个满足 $C_1$，有 $m_{2}$ 个满足 $C_ 2$，$\begin{aligned}(1-\frac{\mathrm{m}_{1}}{\mathrm{n}})(1-\frac{\mathrm{m}_{2}}{\mathrm{n}})\end{aligned}$ 是不满足这个条件的元组的概率，计算如下：
+  > $$
+  > T(S)=10000^{\star}(1-(1-200 / 10000)(1-3333 / 10000) \approx 3466
+  > $$
+  > 也可以简单估计：$T(S)=T(R) / 3=10000 / 3 \approx 3333$
+
++ 估算连接运算 $S'=R(X, Y) \text{~Natural Join~}S(Y, Z)$ 的大小：
+
+  > 估计: $\mathbf{T}(\mathbf{S'})=\mathbf{T}(\mathbf{R}) \mathbf{T}(\mathbf{S}) / \mathbf{m a x}(\mathbf{V}(\mathbf{R}, \mathbf{Y}), \mathbf{V}(\mathbf{S}, \mathbf{Y}))$
+  >
+  > + 假定 $V(R, Y)\ge V(S, Y), R$ 中元组 $r$ 和 $S$ 中元组有相同 $Y$ 值的概率 $=1 / V(R, Y)$
+  >
+  > + 假定 $V(R, Y)<V(S, Y), R$ 中元组 $r$ 和 $S$ 中元组有相同 $Y$ 值的概率 $=1 / V(S, Y)$
+  >
+  > + 则笛卡尔积后的关系在 $Y$ 上相等的概率 $=1 / \max (V(R, Y), V(S, Y))$
+  >
+  > + 尝试解释：
+  >
+  >   + 以上估计是假设数据是均匀分布，即假设一个关系 $U$ 中 $Y$ 属性中，具有相同属性值的元组数均为 $x$ 个，这样总元组数是 $x\times V(Y,U)$。 
+  >
+  >   + $R$ 关系的总元组数为 $x_R\times V(Y,R)$，$S$ 关系的总元组数为 $x_S\times V(Y,S)$。
+  >
+  >   + 所以 $R\times S$ 中，满足 $R.Y=S.Y$ 的元组数为 $x_R\times V(Y,R)\times x_S$，这里假设 $R.Y\sub S.Y$，即 $R$ 的 $Y$ 属性值在 $S$ 中均存在。意义是每个 $R$ 的元组，都能等值连接 $x_S$ 个 $S$ 的元组。
+  >
+  >   +  然后除以总元组数即可，
+  >     $$
+  >     \frac{x_R\times V(Y,R)\times x_S}{x_R\times V(Y,R)\times x_S \times V(Y,S)}=\frac{1}{V(Y,S)}
+  >     $$
+  >
+  > + $T(R)=10000, T(S)=50000, V(R, Y)=500, V(S, Y)=1000$
+  >
+  >   估计：$T(S)=10000 * 50000 / 1000=500000$
+  >
+  > R:10,v(r,Y)=10,100个元组
+  >
+  > S:10,V(S,Y)=20,200
+  >
+  > 
 
 ## 6.数据库事务处理技术
 
