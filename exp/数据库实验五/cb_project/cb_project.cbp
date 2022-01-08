@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="cb_project" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/cb_project" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/cb_project" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Sort-Merge-Join.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sort-Merge-Join.h" />
+		<Unit filename="extmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="extmem.h" />
+		<Unit filename="index_search.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="index_search.h" />
+		<Unit filename="intersect.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="intersect.h" />
+		<Unit filename="linear_search.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linear_search.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rw_tool.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rw_tool.h" />
+		<Unit filename="subtract.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="subtract.h" />
+		<Unit filename="tpmms.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tpmms.h" />
+		<Unit filename="union.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="union.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

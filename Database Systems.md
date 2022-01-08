@@ -4,9 +4,9 @@ $$
 \large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}\large\scr A\cal{ilan} \scr X \cal{ier}
 $$
 
-## 1.数据库基本概念
+## 数据库基本概念
 
-### 1.1.数据抽象
+### 数据抽象
 
 > 通过抽象来对用户屏蔽复杂性，以简化用户与系统的交互。
 
@@ -62,7 +62,7 @@ $$
     >
     > ​	当内部模式（物理模式）变化时，可以不改变概念模式（只需改变 C-I Mapping），从而不改变外部模式。
 
-### 1.2.数据模型
+### 数据模型
 
 > 数据库结构的基础是数据模型。
 
@@ -70,7 +70,7 @@ $$
 
   + 层次模型按树的形式组织数据：
 
-    <img src=".\Database Systems.assets\image-20211118124141153.png" alt="image-20211118124141153" style="zoom:67%;" />
+    <img src="./Database Systems.assets/image-20211118124141153.png" alt="image-20211118124141153" style="zoom:67%;" />
 
     + 优点：
       + 数据**结构简单清晰**。
@@ -84,7 +84,7 @@ $$
 
   + 网状模型按图的形式组织数据：
 
-    <img src=".\Database Systems.assets\image-20211118124756242.png" alt="image-20211118124756242" style="zoom:67%;" />
+    <img src="./Database Systems.assets/image-20211118124756242.png" alt="image-20211118124756242" style="zoom:67%;" />
 
     + 优点：
 
@@ -126,7 +126,7 @@ $$
   
   + 基于对象的数据模型（应该不怎么学）
 
-### 1.3.数据库系统和语言
+### 数据库系统和语言
 
 + 数据库系统：
   + 数据库（DB，Database） 
@@ -162,9 +162,9 @@ $$
   
     ​	对不同操作和用户的约束。
 
-## 2.关系模型
+## 关系模型
 
-### 2.1.定义
+### 定义
 
 + 表的列，也叫字段/属性/数据项，包括列名和列值。
 
@@ -194,7 +194,7 @@ $$
   + $n$ 是关系的**度或目**，即有多少列。
   + 关系模式中 $A_i (i = 1,\cdots,n)$ 必须是不同的, 而 $D_i(i = 1,\cdots,n)$ 是可以相同的。
 
-### 2.2.关系的特性
+### 关系的特性
 
 + 列是同质：
 
@@ -214,7 +214,7 @@ $$
 
 + 属性不可再分特性（关系第一范式）
 
-### 2.3.码（键）
+### 码（键）
 
 + 超码（superkey）：
 
@@ -240,7 +240,7 @@ $$
 
   ​	关系 $R$ 中的一个属性组，它不是 $R$ 的候选码，但它与另一个关系候选码（主码）相对应，则称这个属性组为 $R$ 的**外码**。
 
-### 2.4.关系模型中的完整性
+### 关系模型中的完整性
 
 + **实体完整性**：
 
@@ -256,9 +256,9 @@ $$
 
 > 这一章缺少了很关键的关系代数。
 
-## 3.数据库设计
+## 数据库设计
 
-### 3.1.实体-联系（E-R）模型
+### 实体-联系（E-R）模型
 
 + E-R 模型的基本观点：
 
@@ -345,7 +345,7 @@ $$
 
   > 例如：
   >
-  > ![image-20211004133238514](.\Database Systems.assets\image-20211004133238514.png)
+  > <div align="center"><img src="./Database Systems.assets/image-20211004133238514.png"/></div>
   >
   > 一个 instructor 可以对应 **$0$ 个或多个** student，但一个 student **有且仅有一个** instructor，注意 advisor 是从 instructor 到 student的**一对多**联系。
   >
@@ -367,7 +367,7 @@ $$
   + 没有**足够的属性以形成主码**的实体集称作**弱实体集**（从属实体集）。
   + 有**主码**的实体集称作**强实体集**（独立实体集）。
 
-### 3.2.数据库设计
+### 数据库设计
 
 + 需求分析：
 
@@ -431,7 +431,7 @@ $$
   
       ​	存在传递函数依赖。
 
-### 3.3.函数依赖
+### 函数依赖:dagger:
 
 + 函数依赖定义：
 
@@ -556,7 +556,7 @@ $$
 
      > 若 $X$ 在替换前依赖集的属性闭包包含 $Z$，说明本来就有依赖 $X\to Z$，又因为 $XY\to X$，所以又可以推出 $XY\to Z$，即 $XY\to Z$ 是多余的，可以用 $X\to Z$ 替换。 
 
-### 3.4.关系模式范式
+### 关系模式范式:dagger:
 
 + 第一范式：
 
@@ -566,7 +566,7 @@ $$
   >
   > 多值属性解决方案：
   >
-  > ![image-20211005105615752](.\Database Systems.assets\image-20211005105615752.png)
+  > <div align="center"><img src="./Database Systems.assets/1.png"/></div>
   >
   > + 拆成两个表，原表去掉多值列，然后把多值属性和主码作为一个新的表。
   > + 拆成多行
@@ -625,7 +625,7 @@ $$
   - $\alpha \rightarrow \beta$ 是一个平凡的多值依赖。
   - $\alpha$ 是 $R$ 的一个超码。
 
-### 3.5.模式分解
+### 模式分解
 
 + 模式分解定义：
 
@@ -734,9 +734,9 @@ $$
       >
       >   + 不存在，$\rho=\rho~\cup$ 候选键属性集。
 
-## 4.数据存储和查询
+## 数据存储和查询
 
-### 4.1.存储和文件结构
+### 存储和文件结构
 
 + 存储体系：
 
@@ -748,7 +748,7 @@ $$
 
   + FAT（文件分配表 - File Allocation Table）- 目录（文件夹）- 磁盘块/簇
 
-    <img src=".\Database Systems.assets\image-20211012225110095.png" alt="image-20211012225110095" style="zoom:67%;" />
+    <img src="./Database Systems.assets/image-20211012225110095.png" alt="image-20211012225110095" style="zoom:67%;" />
 
   + 对于一个文件，用 FAT 找到它在磁盘中的位置。
 
@@ -758,7 +758,7 @@ $$
 
 + 磁盘结构：
 
-  <img src=".\Database Systems.assets\image-20211012161544352.png" alt="image-20211012161544352" style="zoom: 67%;" />
+  <img src="./Database Systems.assets/image-20211012161544352.png" alt="image-20211012161544352" style="zoom: 67%;" />
 
   + **盘片**的表面从逻辑上划分为**磁道**（同心圆），磁道又划分为**扇区**。
   + 扇区是从磁盘读出和写入信息的**最小单位**，系统数据传输的基本单位是磁盘块（几个连续的扇区）。
@@ -848,11 +848,11 @@ $$
 
     ​	块交叉的**分布奇偶校验位**的组织结构，是 RAID $4$ 级的改进，将数据和奇偶校验位都分布到所有的 $N + 1$ 张磁盘中。
 
-    <img src=".\Database Systems.assets\image-20211013151334886.png" alt="image-20211013151334886" style="zoom:67%;" />
+    <img src="./Database Systems.assets/image-20211013151334886.png" alt="image-20211013151334886" style="zoom:67%;" />
 
 + 数据存储的映射：
 
-  <img src=".\Database Systems.assets\image-20211013152301903.png" alt="image-20211013152301903" style="zoom:80%;" />
+  <img src="./Database Systems.assets/image-20211013152301903.png" alt="image-20211013152301903" style="zoom:80%;" />
 
 + 数据库记录在磁盘上的存储：
 
@@ -860,11 +860,11 @@ $$
 
     ​	所有字段固定位数（黑色是空着的）。
 
-    ![image-20211013185732990](.\Database Systems.assets\image-20211013185732990.png)
+    <div align="center"><img src="./Database Systems.assets/image-20211013185732990.png"/></div>
 
   + 变长记录（靠分隔符区分开始与结束）：
 
-    ![image-20211013185940477](.\Database Systems.assets\image-20211013185940477.png)
+    <div align="center"><img src="./Database Systems.assets/1.png"/></div>
     
     + 块头包括：
       + 块头中记录条目的个数。
@@ -904,7 +904,7 @@ $$
 
     ​	索引块中存放指向实际**数据块的指针**（可以不用 FAT）。
     
-    <img src=".\Database Systems.assets\image-20211013191826059.png" alt="image-20211013191826059" style="zoom:80%;" />
+    <img src="./Database Systems.assets/image-20211013191826059.png" alt="image-20211013191826059" style="zoom:80%;" />
 
 + **文件组织方法**:dagger:：
 
@@ -962,7 +962,7 @@ $$
   
     + 何时使用多表聚簇依赖于数据库设计者所认为的**最频繁的查询类型**。
 
-### 4.2.索引概念和分类:dagger:
+### 索引概念和分类:dagger:
 
 + 索引定义：
 
@@ -1035,15 +1035,15 @@ $$
 
     + **索引文件**中索引字段值是**不重复的**，**主文件**按索引字段**排序**。
 
-      <img src=".\Database Systems.assets\image-20211119134744510.png" alt="image-20211119134744510" style="zoom:60%;" />
+      <img src="./Database Systems.assets/image-20211119134744510.png" alt="image-20211119134744510" style="zoom:60%;" />
 
     + **索引文件**中索引字段值是有**重复**的，主文件**不排序**。
 
-      ![image-20211119133756782](.\Database Systems.assets\6fda6106a92bb6123bb84b5bf951d39e.jpg)
+      <div align="center"><img src="./Database Systems.assets/6fda6106a92bb6123bb84b5bf951d39e.jpg"/></div>
     
     + 引入**指针桶**处理非候选键索引的多记录情况，**索引文件**中索引字段值是**不重复的**，主文件**不排序**。
     
-      <img src=".\Database Systems.assets\eec1c49cea791f862e00000e00158704.jpg" alt="image-20211013191826059" style="zoom:100%;" />
+      <img src="./Database Systems.assets/eec1c49cea791f862e00000e00158704.jpg" alt="image-20211013191826059" style="zoom:100%;" />
       
       > 索引文件通常要排序。
       
@@ -1082,7 +1082,7 @@ $$
 
     ​	如果主文件的某一**排序**字段**不是主码**，则该字段上每个记录取值便不唯一，此时该字段被称为**聚簇字段**。聚簇索引通常是定义在聚簇字段上。
     
-    <img src=".\Database Systems.assets\image-20211119141551035.png" alt="image-20211119141551035" style="zoom:80%;" />
+    <img src="./Database Systems.assets/image-20211119141551035.png" alt="image-20211119141551035" style="zoom:80%;" />
 
 + 非聚簇索引：
 
@@ -1095,7 +1095,7 @@ $$
   > + 辅助索引通常是非聚簇索引。
   > + 主索引/聚簇索引是能够**决定记录存储位置**的索引，而辅助索引/非聚簇索引则只能用于**查询**，指出已存储记录的位置。
 
-### 4.3.多级索引（B+ 树）:dagger:
+### 多级索引（B+ 树）:dagger:
 
 > 必考内容:evergreen_tree:
 
@@ -1103,7 +1103,7 @@ $$
 
 + B+ 树节点：
 
-  ![image-20211014210434101](.\Database Systems.assets\image-20211014210434101.png)
+  <div align="center"><img src="./Database Systems.assets/image-20211014210434101.png"/></div>
 
   + $K_i$：
 
@@ -1148,7 +1148,7 @@ $$
   + 合并后需要仔细调整索引键值及指针。
   + 注意叶子结点之间链接关系的调整。
 
-### 4.4.散列索引
+### 散列索引
 
 + 桶：
 
@@ -1168,9 +1168,9 @@ $$
 
   ​	如果桶的数目 $M$ 不变，过大则**浪费**，过小则将产生更多的**溢出桶**，增加散列索引检索的时间。
 
-  > 以下为两种动态散列索引:dagger:，考区别。
+  > 以下为两种动态散列索引:dagger:，考选择题，注意区别和名字。
 
-+ 可扩展散列索引：
++ **可扩展散列索引**：
 
   + 有一个附加的间接层（**指针数组**），系统在访问桶本身之前必须先访问指针数组表。
 
@@ -1178,7 +1178,7 @@ $$
 
   + 多个桶可能共享一个数据块（即多个指针数组指向同一个数据库）。
 
-    ![image-20211119162510134](.\Database Systems.assets\image-20211119162510134.png)
+    <div align="center"><img src="./Database Systems.assets/image-20211119162510134.png"/></div>
 
   + 参数 $k$ 表示散列函数所可能使用的**最多位数**。
 
@@ -1194,7 +1194,7 @@ $$
     
     + 其他的桶按照散列前缀重新指向对应数据块，会出现多个桶共享一个块的情况（因为在后面加 $0/1$ 指向不变）。
     
-      ![image-20211119162911341](.\Database Systems.assets\image-20211119162911341.png)
+      <div align="center"><img src="./Database Systems.assets/image-20211119162911341.png"/></div>
 
   > 缺点：
   >
@@ -1202,7 +1202,7 @@ $$
   > + 桶数翻倍后，主存可能装不下。
   > + 可能产生大量空间浪费，因为一个数据块满了得翻倍，其他块可能都没有存多少数据。
 
-+ 线性散列索引：
++ **线性散列索引**：
 
   + 桶数的选择：
 
@@ -1226,9 +1226,9 @@ $$
     
     + 当桶数超过 $2^i$ 个桶时，则使 $i$ 增 $1$。
 
-## 5.数据库查询实现算法
+## 数据库查询实现算法
 
-### 5.1.概述
+### 概述
 
 + 查询优化：
 
@@ -1281,7 +1281,7 @@ $$
 
     ​	$\rm PRODUCT,JOIN$
 
-### 5.2.连接操作的实现算法
+### 连接操作的实现算法
 
 + 关系的物理存储相关的参数：
 
@@ -1380,7 +1380,7 @@ $$
   
   > 迭代器不考。
 
-### 5.3.一趟扫描算法
+### 一趟扫描算法
 
 + 关系 $R$ 数据读取：
 
@@ -1449,7 +1449,7 @@ $$
   + 主要思想就是把内存操作的两重循环通过散列的方式，压缩到一重循环就行。
   + 散列函数可取连接条件中的相应属性，使得**散列结果相同说明这两个属性满足连接条件**。
 
-### 5.4.基于索引的选择算法
+### 基于索引的选择算法
 
 + **选择**条件中有涉及到**索引属性**时，可以使用索引，辅助快速检索。
 
@@ -1493,7 +1493,7 @@ $$
        + 如果 $a>b$，则将 $S$ 的下一个索引项赋予 $b$，继续执行 $2$。
     3. 如果 $a=b$，则将 $R$ 和 $S$ 关系中对应的元组读出并进行连接，直到 $R$ 的所有相等的 $a$ 值和 $S$ 的所有相等的 $b$ 值对应的元组都处理完毕，将 $R$ 的下一个索引项赋予 $a$，将 $S$ 的下一个索引项赋予 $b$，继续执行 $2$。
 
-### 5.5.两阶段多路归并排序 TPMMS
+### 两阶段多路归并排序 TPMMS
 
 > 实验做，考试老师说不会考。
 
@@ -1531,7 +1531,7 @@ $$
   
     ​	读写磁盘块的次数，即 I/O 数 $=4B_{problem}$。
 
-### 5.6.语法优化技术
+### 语法优化技术
 
 > 必考，估计选择填空题:dagger:。
 
@@ -1539,7 +1539,7 @@ $$
 
   + 长这样：
 
-  <img src=".\Database Systems.assets\image-20211021164943547.png" alt="image-20211021164943547" style="zoom:67%;" />
+  <img src="./Database Systems.assets/image-20211021164943547.png" alt="image-20211021164943547" style="zoom:67%;" />
 
   从叶子到树根执行。
 
@@ -1718,8 +1718,7 @@ $$
 
     ​	以每组结点为一步，后代先执行，从叶子执行到根。
 
-
-### 5.7.代价估计
+### 代价估计:dagger:
 
 + 统计信息：
 
@@ -1859,9 +1858,9 @@ $$
   >   估计为 $T(S’)=10000 * 50000 / 1000=500000$
   >
 
-## 6.数据库事务处理技术
+## 数据库事务处理技术
 
-### 6.1.事务（纯复制）
+### 事务（纯复制）
 
 + 事务的定义：
 
@@ -1916,7 +1915,7 @@ $$
   
   > 可以说具有 ACID 特性的若干数据库基本操作的组合体被称为事务。
 
-### 6.2.事务调度
+### 事务调度
 
 + 事务调度概念：
 
@@ -1985,11 +1984,11 @@ $$
 
   > 例子：
   >
-  > ![image-20211116223739408](.\Database Systems.assets\image-20211116223739408.png)
+  > <div align="center"><img src="./Database Systems.assets/image-20211116223739408.png"/></div>
   >
   > 与边上的元素无关，只要存在环就是不满足冲突可串行的。
 
-### 6.3.锁
+### 锁
 
 + 锁的类型：
 
@@ -2024,7 +2023,7 @@ $$
 
 + **锁协议**：
 
-  > :dagger:重难点，PPT 更改了很多次，也特意问了老师和同学，希望下面理解是正确的。
+  > :dagger:重难点，PPT 更改了很多次，也特意问了老师和同学，希望下面理解是正确的，考试大题问使用哪种锁协议，并说明理由。
 
   + 背景：
 
@@ -2034,7 +2033,7 @@ $$
 
     + 所有写操作都要加排他锁，但排他锁是写完就释放，而不是直到提交事务才释放。
 
-      ![image-20211117001704015](.\Database Systems.assets\image-20211117001704015.png)
+      <div align="center"><img src="./Database Systems.assets/image-20211117001704015.png"/></div>
       
       > 注意在排他锁期间是可以读的，读操作并没有要求上锁，也就不会因为申请有关读的锁而阻塞。
       
@@ -2044,21 +2043,21 @@ $$
       >
       > + 丢失修改：
       >
-      >   ![image-20211117000600586](.\Database Systems.assets\image-20211117000600586.png)
+      >   <div align="center"><img src="./Database Systems.assets/image-20211117000600586.png"/></div>
       >
       > + 不可重复读：
       >
-      >   ![image-20211117000704174](.\Database Systems.assets\image-20211117000728378.png)
+      >   <div align="center"><img src="./Database Systems.assets/image-20211117000728378.png"/>
       >
       > + 脏读：
       >
-      >   ![image-20211117000728378](.\Database Systems.assets\image-20211117000704174.png)
+      >   <div align="center"><img src="./Database Systems.assets/image-20211117000704174.png"/>
     
   + $1$ 级协议：
   
     + 所有写操作都要加排他锁，排他锁直到提交事务才释放。
   
-      ![image-20211117001725343](.\Database Systems.assets\image-20211117001725343.png)
+      <div align="center"><img src="./Database Systems.assets/image-20211117001725343.png"/>
   
     + 可以**防止丢失修改**，因为在别人不能在你提交前进行修改（有写排他锁），这样你的修改将可以一直保留到提交。
   
@@ -2068,7 +2067,7 @@ $$
   
     + 所有写操作同 $1$ 级协议，读操作要加**共享锁**，但共享锁是读完就释放，而不是直到提交事务才释放。
   
-      ![image-20211117001833104](.\Database Systems.assets\image-20211117001833104.png)
+      <div align="center"><img src="./Database Systems.assets/image-20211117001833104.png"/></div>
   
     + 可以**防止丢失修改**，理由同 $1$ 级协议。
   
@@ -2076,19 +2075,17 @@ $$
   
     + **不能防止不可重复读**，理由见下图：
   
-      ![image-20211117002237934](.\Database Systems.assets\image-20211117002237934.png)
+      <div align="center"><img src="./Database Systems.assets/image-20211117002237934.png"/></div>
   
   + $3$ 级协议：
   
     + 所有写操作同 $1$ 级协议，读操作要加**共享锁**，直到提交事务才释放。
   
-      ![image-20211117002930381](.\Database Systems.assets\image-20211117002930381.png)
+      <div align="center"><img src="./Database Systems.assets/image-20211117002930381.png"/></div>
   
     + **防止丢失修改，不可重复读，脏读**。
   
       > 不可重复读现象不会发生，因为不会出现上图的共享锁释放后还可以被别人修改，且我再读的现象。
-
-​							
 
 + 封锁粒度：
 
@@ -2120,11 +2117,11 @@ $$
     >
     > 每个事务中所有**封锁**请求**先于**任何一个**解锁**请求。
     >
-    > ![image-20211117100646462](.\Database Systems.assets\image-20211117100646462.png)
+    > <div align="center"><img src="./Database Systems.assets/image-20211117100646462.png"/></div>
 
   + 可以保证**冲突可串行性**的，但是可能产生**死锁**。
 
-### 6.4.基于时间戳的并发控制方法:dagger:
+### 基于时间戳的并发控制方法:dagger:
 
 + 不用锁实现并发控制。
 
@@ -2191,13 +2188,13 @@ $$
 
     + 脏读：
 
-      ![image-20211117151647520](.\Database Systems.assets\image-20211117151647520.png)
+      <div align="center"><img src="./Database Systems.assets/image-20211117151647520.png"/></div>
 
       ​	事务 $T$ 读取了事务 $U$ 没提交的数据，在 $U$ 回滚后就变成了脏数据。
 
     + 类似丢失修改的错误：
 
-      ![image-20211117152026245](.\Database Systems.assets\image-20211117152026245.png)
+      <div align="center"><img src="./Database Systems.assets/image-20211117152026245.png"/></div>
 
       $T$ 的写在**托马斯写**规则下，会被忽略，但是 $U$ 终止了，导致谁都没用写成 $x$。这种情况下理应**保留 $T$ 的写**。
 
@@ -2257,7 +2254,7 @@ $$
 
     > 具体怎么判断就像上面说的一样还缺少一些信息作为判断依据。
 
-### 6.5.基于有效性确认的并发控制方法
+### 基于有效性确认的并发控制方法
 
 + 基本思想：
 
@@ -2316,11 +2313,11 @@ $$
 
 + 例子：
 
-  ![image-20211117183843703](.\Database Systems.assets\image-20211117183843703.png)
+  <div align="center"><img src="./Database Systems.assets/image-20211117183843703.png"/></div>
 
-## 7.故障恢复
+## 故障恢复
 
-### 7.1.故障恢复的宏观思路
+### 故障恢复的宏观思路
 
 + 故障类型：
 
@@ -2364,7 +2361,7 @@ $$
 
   + 当事务对数据库进行操作时，**先写运行日志**。写成功后，再与数据库缓冲区进行信息交换。
 
-    ![image-20211117190515585](.\Database Systems.assets\image-20211117190515585.png)
+    <div align="center"><img src="./Database Systems.assets/image-20211117190515585.png"/></div>
     
   + 保存信息：
 
@@ -2388,7 +2385,7 @@ $$
     + 保证在检查点之前内存中数据与 DB 中数据是**保持一致**的，即检查点**之前结束**的事务不需要恢复（已经写回 DB）。
     + 检查点之后**结束或发生**的事务需要依据**运行日志**进行恢复（不能确定是否写回 DB）：**故障点前结束的重做，故障点时刻未结束的撤消**。
 
-    ![image-20211117200855482](.\Database Systems.assets\image-20211117200855482.png)
+    <div align="center"><img src="./Database Systems.assets/image-20211117200855482.png"/></div>
     
   + 通过副本实现**介质故障**恢复：
   
@@ -2399,7 +2396,7 @@ $$
       + 过疏会造成运行日志过大，也影响系统运行性能（转储点前的日志不需要保存）。
       + 备份转储周期与运行日志的大小密切相关，合理设置。
 
-### 7.2.缓冲区:dagger:
+### 缓冲区
 
 + 事务和缓冲区的操作：
 
@@ -2427,7 +2424,7 @@ $$
 
     ​	事务撤销。
 
-+ **缓冲区策略**🤏：
++ **缓冲区策略**🤏:dagger:：
 
   + Force：
 
@@ -2455,9 +2452,11 @@ $$
 
   + 各种搭配的效率和策略比较：
 
-    ​	最灵活且常用 Steal + No Force![image-20211117201057674](.\Database Systems.assets\image-20211117201057674.png)
+    ​	最灵活且常用 Steal + No Force
+    
+    <div align="center"><img src="./Database Systems.assets/image-20211117201057674.png"/></div>
 
-### 7.3.三种日志类型
+### 三种日志类型
 
 > 这一节老师讲的很快，很多地方存在疑惑（为什么要执行到哪个地方，检查点实际的作用）都不太清楚，只能盲目搬运 PPT 了😫。
 

@@ -1,0 +1,94 @@
+# depslib dependency file v1.0
+1635859088 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\extmem.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"extmem.h"
+
+1635842076 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\extmem.h
+	<stddef.h>
+
+1636376017 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\index_search.c
+	<stdio.h>
+	<string.h>
+	"tpmms.h"
+	"rw_tool.h"
+
+1635924785 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\tpmms.h
+	"extmem.h"
+
+1635951398 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\rw_tool.h
+	"extmem.h"
+
+1636425586 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\intersect.c
+	"intersect.h"
+	<stdio.h>
+	<string.h>
+	"rw_tool.h"
+
+1635946201 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\intersect.h
+	"extmem.h"
+
+1636376030 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\linear_search.c
+	"linear_search.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1635924624 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\linear_search.h
+	"extmem.h"
+	"rw_tool.h"
+
+1635995037 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\main.c
+	<stdio.h>
+	<stdlib.h>
+	"linear_search.h"
+	"tpmms.h"
+	"index_search.h"
+	"Sort-Merge-Join.h"
+	"intersect.h"
+	"union.h"
+	"subtract.h"
+
+1635924624 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\index_search.h
+	"extmem.h"
+
+1635946379 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\sort-merge-join.h
+	"extmem.h"
+
+1635947768 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\union.h
+	"extmem.h"
+
+1635948341 c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\subtract.h
+	"extmem.h"
+
+1636376025 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\sort-merge-join.c
+	"Sort-Merge-Join.h"
+	<stdio.h>
+	<string.h>
+	"rw_tool.h"
+
+1636425788 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\subtract.c
+	"subtract.h"
+	<stdio.h>
+	<string.h>
+	"rw_tool.h"
+
+1636377218 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\tpmms.c
+	<stdio.h>
+	<string.h>
+	"tpmms.h"
+	"rw_tool.h"
+
+1636425717 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\union.c
+	"union.h"
+	<stdio.h>
+	<string.h>
+	"rw_tool.h"
+
+1635953323 source:c:\users\lenovo\desktop\database systems\experiment\ex5\cb_project\rw_tool.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"rw_tool.h"
+
